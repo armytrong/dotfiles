@@ -199,6 +199,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    id 0
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
@@ -213,7 +214,8 @@ bar {
 }
 
 bar { 
-     swaybar_command waybar
+    id 1
+    swaybar_command waybar
 }
 
 include @sysconfdir@/sway/config.d/
@@ -252,14 +254,13 @@ exec mako
 # exit mode
 #
 
-set $exit "exit: [s]leep, [p]oweroff, [r]eboot, [l]ogout, [w]indows"
+set $exit "exit: [s]leep, [p]oweroff, [r]eboot, [l]ogout"
 mode $exit {
     bindsym --to-code {
         s exec systemctl suspend, mode "default"
         p exec systemctl poweroff
         r exec systemctl reboot
         l exec swaymsg exit
-        w exec reboot-to-windows-somehow-lol.sh
     
         Return mode "default"
         Escape mode "default"
