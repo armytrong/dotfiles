@@ -125,6 +125,11 @@ _G.packer_plugins = {
     path = "/home/jakob/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["swayconfig.vim"] = {
+    loaded = true,
+    path = "/home/jakob/.local/share/nvim/site/pack/packer/start/swayconfig.vim",
+    url = "https://github.com/jamespeapen/swayconfig.vim"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/jakob/.local/share/nvim/site/pack/packer/start/vim-vsnip",

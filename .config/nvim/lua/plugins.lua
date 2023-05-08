@@ -36,6 +36,11 @@ use 'hrsh7th/vim-vsnip'
 
 --use 'williamboman/nvim-lsp-installer' -- lsp-installer
 
+
+-- syntax highlighting
+use 'jamespeapen/swayconfig.vim'
+
+
 -- Automatically set up your configuration after cloning packer.nvim
 if packer_bootstrap then
     require('packer').sync()
