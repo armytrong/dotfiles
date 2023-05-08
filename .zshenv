@@ -1,3 +1,5 @@
+SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
 function lock {
 	swaylock --color 101010 --image ~/Downloads/background.jpg
 }
