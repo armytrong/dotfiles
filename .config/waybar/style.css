@@ -5,14 +5,14 @@
     font-size: 16px;
 }
 
-window#waybar { background: transparent; }
+window#waybar { background: #282828; }
 
 /* Groups */
 .modules-right, .modules-left, .modules-center {
     background-color: #282828;
-    border: 2px solid #7c6f64;
+    border: 0px solid #7c6f64;
     padding: 2px;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 
 label, button { padding: 0 8px; }
