@@ -34,6 +34,15 @@ vim.cmd "colorscheme gruvbox"
 
 
 local lsp = require("lspconfig")
-lsp.jedi_language_server.setup({on_attach=on_attach})
-lsp.lua_ls.setup({on_attach=on_attach})
-lsp.clangd.setup({on_attach=on_attach})
+lsp.jedi_language_server.setup({
+    on_attach=on_attach,
+    capabilities=capabilities
+})
+lsp.lua_ls.setup({
+    on_attach=on_attach,
+    capabilities=capabilities
+})
+lsp.clangd.setup({
+    on_attach=on_attach,
+    capabilities=capabilities
+})
