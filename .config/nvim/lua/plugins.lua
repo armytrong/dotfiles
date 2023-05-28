@@ -34,12 +34,26 @@ use 'hrsh7th/nvim-cmp'
 use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
 
---use 'williamboman/nvim-lsp-installer' -- lsp-installer
+
+use 'williamboman/nvim-lsp-installer' -- lsp-installer
+
+
+-- github integration
+
+use {
+  'tanvirtin/vgit.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  }
+}
 
 
 -- syntax highlighting
 use 'jamespeapen/swayconfig.vim'
 
+-- themes
+use 'Mofiqul/dracula.nvim'
+use 'ellisonleao/gruvbox.nvim'
 
 -- Automatically set up your configuration after cloning packer.nvim
 if packer_bootstrap then
