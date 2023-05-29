@@ -95,19 +95,19 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "{usage}% ",
-    "on-click": "kitty -e htop -p 1"
+    "format": "{usage}% ",
+    "on-click": "kitty -e btop -p 1"
   },
   "memory": {
     "interval": 5,
     "format": "{}% ",
-    "on-click": "kitty -e htop -p 2"
+    "on-click": "kitty -e btop -p 2"
   },
   "temperature": { 
     "interval": 5,
     "thermal-zone": 2,
     "format": "{temperatureC}°C ",
-    "on-click": "kitty -e htop -p 3",
+    "on-click": "kitty -e btop -p 3",
     "tooltip": false
   },
   "clock": {
@@ -119,12 +119,12 @@
     "format": "{icon}",
     "format-icons": {
     "activated": "",
-    "deactivated": "鈴"
+    "deactivated": ""
     }
   },
   "custom/pacman": {
     "interval": 350,
-    "format": " {}",
+    "format": "󰏗 {}",
     "exec": "checkupdates | wc -l",
     "exex-if": "checkupdates",
     "on-click": "kitty -e paru -Syu && pkill -SIGRTMIN+8 waybar",
