@@ -27,9 +27,9 @@ compinit
 alias ls="ls --color=auto"
 alias l="ls -lh"
 alias ll="l -a"
-alias install="sudo pacman -S"
-alias remove="sudo pacman -R"
-alias update="sudo pacman -Syu"
+alias install="paru -S"
+alias remove="paru -R"
+alias update="paru -Syu"
 
 alias vim=nvim
 
