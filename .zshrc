@@ -31,6 +31,9 @@ alias install="paru -S"
 alias remove="paru -R"
 alias update="paru -Syu"
 
+alias vpn-connect='nmcli --ask connection up "Uni-Bonn-VPN"'
+alias vpn-disconnect='nmcli --ask connection down "Uni-Bonn-VPN"'      
+
 alias vim=nvim
 
 export EDITOR=nvim
