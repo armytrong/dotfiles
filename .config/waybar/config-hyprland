@@ -6,22 +6,36 @@
   "spacing": 7,
   "margin": "5 5 0 5",
   "height": 33,
-  "modules-left": [ "idle_inhibitor", "backlight", "custom/pacman", "network", "bluetooth", "pulseaudio", "custom/microphone" , "mpd" ],
+  "modules-left": [ "idle_inhibitor", "backlight", "custom/pacman", "network", "bluetooth", "pulseaudio", "custom/microphone" , "custom/spotify" ],
   "modules-center": [ "wlr/workspaces" ],
   "modules-right": [ "battery", "battery#bat2", "temperature", "cpu", "memory", "custom/weather", "clock" ],
-  "wlr/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "format_icons":{
-        "1": "1",
-        "2": "2"
-    }
-  },
+    "wlr/workspaces": {
+        "on-click": "activate",
+        "format": "{name}: {icon}",
+        "format-icons": {
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": "",
+                "focused": "",
+                "default": ""
+        },
+        "sort-by-number": true
+    },
   "custom/microphone": {
     "exec": "waybar-microphone-indicator.sh",
     "format": "{}",
     "interval": 2
   },
+  "custom/spotify": {
+        "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+    	"format": "{}  ",
+    	"return-type": "json",
+    	"on-click": "playerctl play-pause",
+    	"on-scroll-up": "playerctl next",
+    	"on-scroll-down": "playerctl previous"
+    },
   "bluetooth": {
     "format": "󰂲",
     "format-connected": "",
@@ -95,19 +109,19 @@
   },
   "cpu": {
     "interval": 5,
-    "format": "{usage}% ",
-    "on-click": "kitty -e htop -p 1"
+    "format": "{usage}% ",
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "interval": 5,
     "format": "{}% ",
-    "on-click": "kitty -e htop -p 2"
+    "on-click": "kitty -e btop"
   },
   "temperature": { 
     "interval": 5,
-    "thermal-zone": 2,
+    "thermal-zone": 3,
     "format": "{temperatureC}°C ",
-    "on-click": "kitty -e htop -p 3",
+    "on-click": "kitty -e btop",
     "tooltip": false
   },
   "clock": {
@@ -119,12 +133,12 @@
     "format": "{icon}",
     "format-icons": {
     "activated": "",
-    "deactivated": "鈴"
+    "deactivated": ""
     }
   },
   "custom/pacman": {
     "interval": 350,
-    "format": " {}",
+    "format": "󰏗 {}",
     "exec": "checkupdates | wc -l",
     "exex-if": "checkupdates",
     "on-click": "kitty -e paru -Syu && pkill -SIGRTMIN+8 waybar",
