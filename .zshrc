@@ -35,6 +35,7 @@ alias vpn-connect='nmcli --ask connection up "Uni-Bonn-VPN"'
 alias vpn-disconnect='nmcli --ask connection down "Uni-Bonn-VPN"'      
 
 alias vim=nvim
+alias work="source $HOME/sciebo/work/.workinit"
 
 export EDITOR=nvim
 export VISUAL=nvim
