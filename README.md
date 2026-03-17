@@ -7,7 +7,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME'
 ```  
 * And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems:
 ```zsh
-echo ".cfg" >> .gitignore
+echo ".cfg.git" >> .gitignore
 ```
 * Now clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
 ```zsh
