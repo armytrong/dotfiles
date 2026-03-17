@@ -35,10 +35,17 @@ alias vpn-connect='nmcli --ask connection up "Uni-Bonn-VPN"'
 alias vpn-disconnect='nmcli --ask connection down "Uni-Bonn-VPN"'      
 
 alias vim=nvim
-alias work="source $HOME/sciebo/work/.workinit"
+alias work="source $HOME/work/.workinit"
+
 
 export EDITOR=nvim
 export VISUAL=nvim
+#export PATH=$HOME/.local/bin:$PATH
+export LIBRARY_PATH=$HOME/.local/lib:$LIBRARY_PATH
+
+# enable less syntax highlighting (install `source-highlight`)
+export LESSOPEN="| src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 
 powerline-daemon -q
 . /usr/share/powerline/bindings/zsh/powerline.zsh
@@ -62,6 +69,10 @@ function cdl {
 	cd $(latest)
 }
 
-
-
 alias config='/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME'
+
+
+
+if [[ -v WORK ]]; then
+    source $WORK/.venv/bin/activate
+fi
